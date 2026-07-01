@@ -10,6 +10,25 @@
 
   gtag('config', 'AW-11333869008');
 </script>
+  <!-- Event snippet for ドライヘッド整体LP予約 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11333869008/mPSUCJiR08gcENC7tJwq',
+      'value': 1.0,
+      'currency': 'JPY',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>初めての方限定｜根本からアプローチする90分ケア｜ととのいsalon. MATSUDO</title>
@@ -656,7 +675,7 @@
         <textarea id="remarks" name="remarks" placeholder="気になる症状や、施術の強さのご希望などあればご記入ください"></textarea>
       </div>
 
-      <button type="submit" class="cta-btn submit-btn">この内容で予約する</button>
+      <button type="submit" class="cta-btn submit-btn"onclick="gtag('event', 'conversion', {'send_to': 'AW-11333869008/mPSUCJiR08gcENC7tJwq'});">この内容で予約する</button>
       <p class="form-note">送信後、自動返信メールが届きます。内容確認のうえ改めてご連絡いたします。</p>
     </form>
 
